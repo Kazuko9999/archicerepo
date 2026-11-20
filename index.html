@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dice simulator</title>
+    <link rel="shortcut icon" href="Archfiend_Dice.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,7 +15,6 @@
             <div class="your-dice">
                 <div id="dice">
                     <span class="dice-points"></span>
-                    
                 </div>
             </div>
             <div id="ROLL">
@@ -35,7 +35,7 @@
             for (let index = 0; index < 1; index++) {
             
                 let chance = Math.random()
-                if (chance <= 0.0000015) /*rarer than is hould be cause no money value*/ {
+                if (chance <= 0.000015) /*rarer than is hould be cause no money value*/ {
                     console.log("NYERÉTLLLL")
                     console.log(chance)
                     console.log(howmany)
