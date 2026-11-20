@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div id="ROLL">
-                <button id="roll-btn" onclick="gamble()">Roll</button>
+                <button id="roll-btn" onclick="gamble() ; shakeShake()">Roll</button>
             </div>
             <blockquote>"Why reinvent the wheel if other people have already solved the problem for us."</blockquote>
             <div style="height:50px;"></div>
@@ -102,7 +102,13 @@
             }
         }
 
-
+        function shake(){
+            container.style.animation = "shake 0.1s"
+        }
+        function shakeShake(){
+            setTimeout(shake , 0)
+            container.style.animation = "none"
+        }
 
     </script>
 </body>
