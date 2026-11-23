@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+
 .main-cont {
     margin: auto;
     width: 80%;
     background-color: pink;
+      font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
@@ -52,6 +58,9 @@
 #roll-btn{
     cursor: pointer;
     width: 8em;
+      font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .dice-points:nth-child(2) {
@@ -99,5 +108,4 @@
     90% { transform: translate(2px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }  
-
 
