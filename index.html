@@ -6,7 +6,7 @@
     <title>Dice simulator</title>
     <link rel="shortcut icon" href="Archfiend_Dice.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
-   <!-- <script src="script.js"></script>  -->
+    <!-- <script src="script.js"></script>  -->
   </head>
 
   <body>
@@ -32,26 +32,30 @@
           "Why reinvent the wheel if other people have already solved the
           problem for us."
         </blockquote>
+        <p id="poof">POOF!</p>
         <div style="height: 50px"></div>
       </div>
     </div>
-
 
     <script defer>
       let points = 0;
       let container = document.getElementById("dice");
       let otherContainer = document.getElementById("ROLL");
-      let clickSound = new Audio("click.mp3")
+      let clickSound = new Audio("click.mp3");
+      let chance77 = 0;
+      let poofText = document.getElementById("poof");
       function gamble() {
         let howmany = 0;
         for (let index = 0; index < 1; index++) {
-          let chance = Math.random();
+            let poofTop = Math.floor(Math.random() * 40) - parseInt(2);
+            let poofRight = Math.floor(Math.random() * 30) + parseInt(30);
+          chance7 = Math.random();
 
           if (
-            chance <= 0.000015
+            chance7 <= 0.000015
           ) /*rarer than is hould be cause no money value*/ {
             console.log("NYERÉTLLLL");
-            console.log(chance);
+            console.log(chance7);
             console.log(howmany);
             otherContainer.innerHTML = `<h1>You rolled RARE arcane dice <br> (1 in 66666) </h1>`;
             container.innerHTML = `<span class="dice-points"></span>
@@ -64,12 +68,23 @@
             break;
           } else {
             howmany++;
-            console.log(chance);
+            console.log(chance7);
             console.log("nem nyertél");
             let rolled = Math.floor(Math.random() * 6) + parseInt(1);
             document.getElementById("dice").classList.toggle("animated");
             /*visually changes the dice*/
             console.log(rolled);
+
+            
+            poofText.style.display = "block"
+            poofText.style.top = poofTop + "%";
+            poofText.style.right = poofRight + "%";
+            
+            function fadeInPoof(){poofText.style.animation = "fade 1s"}
+            function fadeInPoofF(){}
+                setTimeout(fadeInPoof)
+                poofText.style.animation = "none"
+
             switch (rolled) {
               case 1:
                 container.innerHTML = `<span class="dice-points"></span>`;
@@ -115,7 +130,7 @@
         container.style.animation = "shake 0.1s";
       }
       function shakeShake() {
-        clickSound.currentTime = 0.15
+        clickSound.currentTime = 0.15;
         clickSound.play();
         setTimeout(shake, 0);
         container.style.animation = "none";

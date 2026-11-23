@@ -1,111 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 
 .main-cont {
-    margin: auto;
-    width: 80%;
-    background-color: pink;
-      font-family: "Courgette", cursive;
+  margin: auto;
+  width: 80%;
+  background-color: pink;
+  font-family: "Courgette", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
-
 .roll-cont {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .your-dice {
-    margin: auto;
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  margin: auto;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#poof {
+  display: none;
+  position: absolute;
+  color: #ff0000;
+  font-weight: bolder;
+  text-shadow: 2px 14px 13px rgba(0, 0, 0, 0.5);
+  user-select: none;
+  z-index: 0;
 }
 
 #dice {
-    margin: 16px auto;
-    padding: 10px;
-    width: 104px;
-    height: 104px;
-    background-color: #e7e7e7;
-    box-shadow: inset 0 5px white, inset 0 -5px #bbb, inset 5px 0 #d7d7d7, inset -5px 0 #d7d7d7;
-    border-radius: 10%;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-        "a . c"
-        "e g f"
-        "d . b";
-        
+  margin: 16px auto;
+  padding: 10px;
+  width: 104px;
+  height: 104px;
+  background-color: #e7e7e7;
+  box-shadow:
+    inset 0 5px white,
+    inset 0 -5px #bbb,
+    inset 5px 0 #d7d7d7,
+    inset -5px 0 #d7d7d7,
+    5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "a . c"
+    "e g f"
+    "d . b";
 }
 
 .dice-points {
-    display: block;
-    align-self: center;
-    justify-self: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: #333;
-    box-shadow: inset 0 3px #111, inset 0 -3px #555;
+  display: block;
+  align-self: center;
+  justify-self: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #333;
+  box-shadow:
+    inset 0 3px #111,
+    inset 0 -3px #555;
 }
 
-#roll-btn{
-    cursor: pointer;
-    width: 8em;
-      font-family: "Courgette", cursive;
+#roll-btn {
+  cursor: pointer;
+  width: 8em;
+  font-family: "Courgette", cursive;
   font-weight: 400;
   font-style: normal;
+  z-index: 1;
 }
 
 .dice-points:nth-child(2) {
-    grid-area: b;
+  grid-area: b;
 }
 
 .dice-points:nth-child(3) {
-    grid-area: c;
+  grid-area: c;
 }
 
 .dice-points:nth-child(4) {
-    grid-area: d;
+  grid-area: d;
 }
-    
+
 .dice-points:nth-child(5) {
-    grid-area: e;
+  grid-area: e;
 }
 
 .dice-points:nth-child(6) {
-    grid-area: f;
+  grid-area: f;
 }
 
 .dice-points:nth-child(odd):last-child {
-    grid-area: g;
+  grid-area: g;
 }
 
-
-.animated{
-    animation: shake 0.5s;
+.animated {
+  animation: shake 0.5s;
 }
-.animated2{
-    animation: shake 0.5s
+.animated2 {
+  animation: shake 0.5s;
 }
 
 @keyframes shake {
-    0% { transform: translate(2px, 1px) rotate(0deg); } 
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(0px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(2px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(2px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-}  
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
 
+.fade {
+  animation: fade 1s;
+}
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    display: none;
+  }
+  
+}
