@@ -6,7 +6,7 @@
     <title>Dice simulator</title>
     <link rel="shortcut icon" href="Archfiend_Dice.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
-    <!-- i changed this comment-->
+    <!-- i changed this comment FROM HOME MWHAHAHA-->
   </head>
 
   <body>
@@ -32,100 +32,127 @@
           "Why reinvent the wheel if other people have already solved the
           problem for us."
         </blockquote>
+        <div class="balance-place">
+          <p>Your coins:<span id="balance">15000000</span>🪙</p>
+        </div>
         <p id="poof">POOF!</p>
         <div style="height: 50px"></div>
       </div>
     </div>
-
+  <!--make a button that lock the roll button for a whole minute and gives you 5 million coins  -->
     <script defer>
       let points = 0;
       let container = document.getElementById("dice");
       let otherContainer = document.getElementById("ROLL");
       let clickSound = new Audio("click.mp3");
-      let chance77 = 0;
+      let chance7 = 0;
+      let chance6 = 0;
       let poofText = document.getElementById("poof");
+      let balanceCont = document.getElementById("balance");
+      let balance = document.getElementById("balance").innerHTML * 1;
       function gamble() {
-        let howmany = 0;
-        for (let index = 0; index < 1; index++) {
+        if (balance >= 666666 * 1) {
+          let howmany = 0;
+          for (let index = 0; index < 1; index++) {
             let poofTop = Math.floor(Math.random() * 40) - parseInt(2);
             let poofRight = Math.floor(Math.random() * 30) + parseInt(30);
-          chance7 = Math.random();
-          
-          if (
-            chance7 <= 0.000015
-          ) /*rarer than is hould be cause no money value*/ {
-            console.log("NYERÉTLLLL");
-            console.log(chance7);
-            console.log(howmany);
-            otherContainer.innerHTML = `<h1>You rolled RARE arcane dice <br> (1 in 66666) </h1>`;
-            container.innerHTML = `<span class="dice-points"></span>
+            chance7 = Math.random();
+            chance6 = Math.random();
+
+            if (chance7 <= 0.00015) /*rarer than is hould be cause no money value*/ {
+              console.log("NYERÉTLLLL");
+              console.log(chance7);
+              console.log(howmany);
+              otherContainer.innerHTML = `<h1>You rolled RARE arcane dice <br> (1 in 66666) </h1>`;
+              container.innerHTML = `<span class="dice-points"></span>
                     <span class="dice-points"></span>
                     <span class="dice-points"></span>
                     <span class="dice-points"></span>
                     <span class="dice-points"></span>
                     <span class="dice-points"></span>
                     <span class="dice-points"></span>`;
-            break;
-          } else {
-            howmany++;
-            console.log(chance7);
-            console.log("nem nyertél");
-            let rolled = Math.floor(Math.random() * 6) + parseInt(1);
-            document.getElementById("dice").classList.toggle("animated");
-            /*visually changes the dice*/
-            console.log(rolled);
+              break;
+            } else {
+              howmany++;
+              console.log(chance7 + " chance for 7");
+              console.log(chance6 + " chance for 6");
+              console.log("nem nyertél");
+              let rolled = Math.floor(Math.random() * 6) + parseInt(1);
+              document.getElementById("dice").classList.toggle("animated");
+              /*visually changes the dice*/
+              console.log(rolled);
 
-            
-            poofText.style.display = "block"
-            poofText.style.top = poofTop + "%";
-            poofText.style.right = poofRight + "%";
-            
-            function fadeInPoof(){poofText.style.animation = "fade 1s"}
-            function fadeInPoofF(){}
-                setTimeout(fadeInPoof)
-                poofText.style.animation = "none"
+              poofText.style.display = "block";
+              poofText.style.top = poofTop + "%";
+              poofText.style.right = poofRight + "%";
 
-            switch (rolled) {
-              case 1:
-                container.innerHTML = `<span class="dice-points"></span>`;
-                break;
-              case 2:
+              function fadeInPoof() {
+                poofText.style.animation = "fade 1s";
+              }
+              function fadeInPoofF() {}
+              setTimeout(fadeInPoof);
+              poofText.style.animation = "none";
+
+              if (chance6 <= 0.01) {
+                console.log(chance6 + " chancefor 6" + " Paid you 15M");
                 container.innerHTML = `<span class="dice-points"></span>
+                                      <span class="dice-points"></span>
+                                      <span class="dice-points"></span>
+                                      <span class="dice-points"></span>
+                                      <span class="dice-points"></span>
+                                      <span class="dice-points"></span>`;
+                balance += 15000000;
+                balanceCont.innerHTML = balance
+                rolled = 6;
+              }
+              switch (rolled) {
+                case 1:
+                  container.innerHTML = `<span class="dice-points"></span>`;
+                  balance -= 666666 * 1;
+                  balanceCont.innerHTML = balance;
+                  break;
+                case 2:
+                  container.innerHTML = `<span class="dice-points"></span>
                                 <span class="dice-points"></span>`;
-                break;
-              case 3:
-                container.innerHTML = `<span class="dice-points"></span>
+
+                  balance -= 666666 * 1;
+                  balanceCont.innerHTML = balance;
+                  break;
+                case 3:
+                  container.innerHTML = `<span class="dice-points"></span>
                                     <span class="dice-points"></span>
                                     <span class="dice-points"></span>`;
-                break;
-              case 4:
-                container.innerHTML = `<span class="dice-points"></span>
+
+                  balance -= 666666 * 1;
+                  balanceCont.innerHTML = balance;
+                  break;
+                case 4:
+                  container.innerHTML = `<span class="dice-points"></span>
                                         <span class="dice-points"></span>
                                         <span class="dice-points"></span>
                                         <span class="dice-points"></span>`;
-                break;
-              case 5:
-                container.innerHTML = `<span class="dice-points"></span>
+                  balance -= 666666 * 1;
+                  balanceCont.innerHTML = balance;
+                  break;
+                case 5:
+                  container.innerHTML = `<span class="dice-points"></span>
                                             <span class="dice-points"></span>
                                             <span class="dice-points"></span>
                                             <span class="dice-points"></span>
                                             <span class="dice-points"></span>`;
-                break;
-              case 6:
-                container.innerHTML = `<span class="dice-points"></span>
-                                                <span class="dice-points"></span>
-                                                <span class="dice-points"></span>
-                                                <span class="dice-points"></span>
-                                                <span class="dice-points"></span>
-                                                <span class="dice-points"></span>`;
-                break;
-              default:
-                break;
+                  balance -= 666666 * 1;
+                  balanceCont.innerHTML = balance;
+                  break;
+                default:
+                  break;
+              }
             }
           }
+        } else if( balance < 666666) {
+          balanceCont = "THE IRS IS COMING FOR YOU 😢😢😢"
+          otherContainer.innerHTML = "YOU LOST ALL YOUR MONEY AND CANT KEEP GAMBLING ";
         }
       }
-
       function shake() {
         container.style.animation = "shake 0.1s";
       }
